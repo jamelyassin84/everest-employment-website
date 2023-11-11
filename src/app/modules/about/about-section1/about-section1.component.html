@@ -1,0 +1,71 @@
+<div class="flex flex-col w-full bg-black p-6 md:p-[80px] mt-20 md:mt-30">
+    <div class="text-center font-bold text-white text-[30px] mx-auto">
+        What do we offer at Everest?
+    </div>
+
+    <div
+        class="text-center text-white/70 text-sm md:text-[16px] md:w-[578px] mx-auto"
+    >
+        Welcome to <span class="text-primary-lighter">everest</span>, where we
+        redefine recruitment. As experts, we meticulously navigate the talent
+        landscape to deliver a perfect match for your company's success. Join us
+        in transforming your hiring experience.
+    </div>
+
+    <div
+        class="grid md:grid-cols-2 gap-[32px] items-start mt-[50px] w-full max-w-screen-lg mx-auto"
+    >
+        <img
+            class="object-contain w-full rounded-xl"
+            src="../../../../assets/icon.png"
+            alt=""
+        />
+
+        <div class="w-full">
+            <div
+                [ngClass]="{
+                    'mb-[30px]': index !== ABOUT_SERVICES.length - 1
+                }"
+                *ngFor="let service of ABOUT_SERVICES; let index = index"
+                class="w-full flex text-center flex-col items-center px-6 md:px-[25px] py-[34px] rounded-[rem] bg-brand-card-dark"
+            >
+                <div class="w-full flex items-center">
+                    <div class="flex-none mb-8 md:mt-0">
+                        <img
+                            alt=""
+                            [src]="service.icon"
+                            class="object-contain bg-transparent w-[200px] flex-none rounded-md translate-y-4 shadow-2xl shadow-accent-lighter/70 bg-brand-card-dark"
+                        />
+                    </div>
+
+                    <div class="ml-[20px] text-left">
+                        <div class="text-white font-bold text-[18px]">
+                            {{ service.title }}
+                        </div>
+
+                        <div class="text-white/50 font-light text-[16px]">
+                            {{ service.description }}
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="grid gap-y-4 md:grid-cols-2 text-white mt-[20px] w-full"
+                >
+                    <div
+                        class="text-[13px] flex items-center justify-center md:justify-start"
+                        *ngFor="let feature of service.features"
+                    >
+                        <span
+                            class="material-symbols-outlined text-accent-lighter mr-3"
+                        >
+                            check_circle
+                        </span>
+
+                        {{ feature }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

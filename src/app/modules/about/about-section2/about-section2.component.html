@@ -1,0 +1,43 @@
+<div
+    class="flex flex-col w-full bg-brand-dark-gray p-6 md:p-[80px] mt-16 md:mt-30"
+>
+    <div class="text-center font-bold text-white text-[30px] mx-auto">
+        Everest Team
+    </div>
+
+    <div
+        class="text-center font-bold text-white/70 text-sm md:text-[16px] md:w-[578px] mx-auto"
+    >
+        Your Partner in Recruitment and Employment Services - Everest excels in
+        finding right people for the right job
+    </div>
+
+    <!-- -mb-[146px] -->
+    <div
+        class="relative z-30 grid px-10 grid-cols-1 md:grid-cols-4 md:gap-[50px] mt-[50px] w-full max-w-screen-lg mx-auto rounded-[20px] border border-white/20 bg-brand-black items-center"
+    >
+        <div
+            class="p-[16px] md:py-[70px] relative"
+            *ngFor="let award of AWARDS; let index = index"
+        >
+            <div
+                *ngIf="index !== 0 && index !== AWARDS.length - 1"
+                class="right-0 rounded-full bg-white/20 w-[3px] h-[94px] absolute translate-x-7 translate-y-10"
+            ></div>
+
+            <div
+                class="w-[59px] h-[59px] rounded-full bg-brand-dark-gray flex items-center mx-[3.5px] justify-center"
+            >
+                <img class="object-contain" [src]="award.icon" alt="" />
+            </div>
+
+            <div class="text-primary-lighter font-bold text-[18px] mt-[30px]">
+                {{ award.title }}
+            </div>
+
+            <div class="text-white/70 font-light text-[16px] mt-[18px]">
+                {{ award.description }}
+            </div>
+        </div>
+    </div>
+</div>

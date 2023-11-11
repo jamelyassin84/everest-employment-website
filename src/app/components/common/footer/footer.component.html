@@ -1,0 +1,135 @@
+<div
+    class="flex flex-col w-full px-6 md:py-[80px] md:px-[80px] relative pb-[150px]"
+>
+    <div
+        class="grid md:grid-cols-5 gap-y-8 gap-x-[90px] md:gap-[98px] mt-[50px] w-full max-w-screen-lg mx-auto items-start justify-start"
+    >
+        <div class="col-span-2">
+            <img
+                alt=""
+                role="button"
+                routerLink="/"
+                class="mb-[24px]"
+                ngSrc="../../../../assets/icon.png"
+                width="163"
+                height="94"
+            />
+
+            <div class="text-white/70 text-[16px] font-normal max-w-[405px]">
+                We are experts dedicated to transforming your recruitment
+                experience. With a keen understanding of your needs, we navigate
+                the talent landscape to bring you unparalleled expertise,
+                ensuring the perfect match for your company's success.
+            </div>
+        </div>
+
+        <div>
+            <div class="font-extrabold text-white text-[20px]">Short Links</div>
+
+            <div class="grid grid-cols-1 gap-y-[30px] md:pt-[25px]">
+                <div
+                    role="button"
+                    routerLink="/"
+                    class="text-white/70 md:hover:underline"
+                >
+                    Home
+                </div>
+                <div
+                    role="button"
+                    routerLink="/about-us"
+                    class="text-white/70 md:hover:underline"
+                >
+                    About Us
+                </div>
+                <div
+                    role="button"
+                    routerLink="/our-services"
+                    class="text-white/70 md:hover:underline"
+                >
+                    Our Services
+                </div>
+
+                <div
+                    role="button"
+                    routerLink="/our-clients"
+                    class="text-white/70 md:hover:underline"
+                >
+                    Our Clients
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="font-extrabold text-white text-[20px]">Contact Us</div>
+            <div class="grid grid-cols-1 gap-y-[30px] mt-[25px]">
+                <div>
+                    <div class="text-white/70">WhatsApp</div>
+                    <div class="text-white">+63-9241-234-5678</div>
+                </div>
+
+                <div>
+                    <div class="text-white/70">Email</div>
+                    <div class="text-white">{{ 'everest@gamil.com' }}</div>
+                </div>
+
+                <div>
+                    <div class="text-white/70">Address</div>
+                    <div class="text-white">Tondo Manila, Philippines</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-span-2 md:col-span-1">
+            <div class="font-extrabold text-white text-[20px]">
+                Follow us on :
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-1 gap-y-[14px] mt-[31px]">
+                <div *ngFor="let social of SOCIALS" class="flex items-center">
+                    <div
+                        role="button"
+                        class="w-[50px] mr-[24px] flex-none h-[50px] mx-[3.5px] rounded-full border border-white/20 flex items-center justify-center md:hover:bg-white/10 active:opacity-80"
+                    >
+                        <img [src]="social.image" alt="" />
+                    </div>
+
+                    <div class="text-white text-[16px] ml-[12px]]">
+                        {{ social.name }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="w-full min-h-[70px] border-t absolute bottom-0 border-white/10 text-center flex items-center"
+    >
+        <div
+            role="button"
+            (click)="scrollToTop()"
+            class="flex items-center my-[20px] rounded-full"
+        >
+            <div
+                class="w-[50px] h-[50px] rounded-full border border-white/20 flex items-center mx-[3.5px] justify-center md:hover:bg-white/10 active:opacity-80"
+            >
+                <span class="material-symbols-outlined text-white">
+                    arrow_upward
+                </span>
+            </div>
+        </div>
+
+        <div
+            class="mx-auto text-white/50 text-[16px] md:-translate-x-[8vw] font-normal"
+        >
+            All rights reserved ©2023 for everest:
+            <span class="text-accent-default">Developer</span> :
+            <a
+                class="text-white underline"
+                href="https://jamelyassin84.github.io"
+                >Jamel Yassin</a
+            >
+        </div>
+
+        <div></div>
+    </div>
+</div>

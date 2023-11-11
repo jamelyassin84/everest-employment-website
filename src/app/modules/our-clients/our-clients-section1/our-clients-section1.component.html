@@ -1,0 +1,72 @@
+<div
+    class="flex flex-col w-full bg-brand-dark-gray py-[80px] items-center mt-[10vh]"
+>
+    <div class="text-center font-bold text-white text-[30px] mx-auto">
+        Our clients's opinions
+    </div>
+
+    <div
+        class="text-center font-bold text-white/70 text-sm md:text-[16px] md:w-[578px] mx-auto"
+    >
+        Everest has been a guiding force in empowering job seekers to navigate
+        the employment landscape. Our exceptional services resonate with your
+        career aspirations, elevating your professional journey with
+        personalized support and guidance.
+    </div>
+
+    <ul
+        class="grid md:grid-cols-3 mt-[100px] w-full mx-auto gap-[50px] md:gap-[159px] px-6 md:px-[80px]"
+    >
+        <li
+            role="button"
+            (click)="currentPartner = partner"
+            [ngClass]="{
+      				'md:opacity-50': currentPartner !== partner,
+      				'md:scale-125': currentPartner === partner,
+      			}"
+            *ngFor="let partner of OUR_PARTNERS"
+            class="flex flex-col items-center justify-center text-center"
+            style="transition: 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67)"
+        >
+            <img
+                priority="high"
+                height="90"
+                width="90"
+                [ngSrc]="partner.image"
+                alt=""
+            />
+
+            <div class="text-white mt-[20px] text-md md:text-[20px] font-bold">
+                {{ partner.name }}
+            </div>
+            <div
+                class="text-white/50 mt-[12px] text-md md:text-[20px] font-bold"
+            >
+                {{ partner.position }}
+            </div>
+
+            <div
+                class="hidden md:block w-full bg-white/10 rounded-full h-[4px] my-[30px] [365px] mx-auto"
+            ></div>
+
+            <div
+                class="text-white/50 mt-[12px] text-sm md:text-[16px] font-bold xl:w-[491px]"
+            >
+                {{ partner.about }}
+            </div>
+        </li>
+    </ul>
+
+    <div class="flex mt-[120px] w-full mx-auto justify-center items-center">
+        <div
+            role="button"
+            (click)="currentPartner = partner"
+            [ngClass]="{
+                'bg-white': currentPartner === partner,
+                'bg-white/20': currentPartner !== partner
+            }"
+            class="w-[40px] h-[3px] rounded-full mx-[7.5px]"
+            *ngFor="let partner of OUR_PARTNERS"
+        ></div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div
+    class="w-screen top-0 fixed px-[90px] pt-[40px] z-[9999] bg-transparent backdrop-blur-lg"
+>
+    <div
+        class="[90px] pt-[6px] border-b-white/10 border-b w-full flex items-center max-w-screen-lg mx-auto"
+    >
+        <img
+            alt=""
+            role="button"
+            routerLink="/"
+            src="../../../../assets/logo.png"
+            class="object-cover z-[11] mr-auto h-[50px] -translate-y-5"
+        />
+
+        @defer (when currentNavigation()) {
+        <ul class="flex ml-auto items-center text-white">
+            @for (nav of NAVBAR_NAVIGATION; track $index) {
+            <li
+                role="button"
+                (click)="currentNavigation.set(nav)"
+                [routerLink]="nav.link"
+                class="px-[25px] pb-[31px] hover:opacity-80 min-w-[74px]"
+                [ngClass]="{
+                    'opacity-50': currentNavigation().name !== nav.name,
+                    'border-b-2 border-primary-lighter pointer-events-none text-primary-lighter':
+                        currentNavigation().name === nav.name
+                }"
+            >
+                {{ nav.name | titlecase }}
+            </li>
+            }
+
+            <div class="flex items-center -translate-y-4">
+                <button
+                    style="
+                        background: linear-gradient(to right, #8ed56a, #4ba0e2);
+                    "
+                    class="text-black font-bold w-[214px] h-[53px] rounded-l-full rounded-r-full mx-[7px]"
+                >
+                    Contact Us
+                </button>
+            </div>
+        </ul>
+        }
+    </div>
+</div>

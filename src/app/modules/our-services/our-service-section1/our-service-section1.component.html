@@ -1,0 +1,41 @@
+<div class="flex flex-col w-full bg-brand-dark-gray p-[80px] pt-28 md:mt-28">
+    <div class="text-center font-bold text-white text-[30px] mx-auto">
+        Everest Employment Services
+    </div>
+
+    <div
+        class="text-center font-bold text-white/70 text-sm md:text-[16px] md:w-[578px] mx-auto"
+    >
+        Everest empowers you in navigating the realm of employment with
+        exceptional services that resonate with your career aspirations and
+        elevate your professional journey.
+    </div>
+</div>
+
+<div
+    class="flex flex-col w-full bg-accent-default/20 min-h-[100vh] p-6 py-16 md:py-[80px] md:p-[80px]"
+>
+    <div
+        class="grid grid-cols-1 md:grid-cols-3 w-full max-w-screen-lg mx-auto gap-y-[40px] gap-x-[20px]"
+    >
+        <div
+            class="w-full p-[42px] rounded-[20px] bg-brand-card-dark/50"
+            *ngFor="let service of OUR_SERVICES"
+        >
+            <div class="flex items-center w-full">
+                <span
+                    class="material-symbols-outlined text-9xl text-primary-lighter mb-8"
+                >
+                    {{ service.icon }}
+                </span>
+            </div>
+
+            <div class="text-white font-bold text-[18px] mb-[18px]">
+                {{ service.title }}
+            </div>
+            <div class="text-[16px] text-white/50 font-light">
+                {{ service.description }}
+            </div>
+        </div>
+    </div>
+</div>
