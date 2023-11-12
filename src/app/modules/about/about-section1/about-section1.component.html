@@ -22,11 +22,12 @@
         />
 
         <div class="w-full">
-            <div
+            @for (service of ABOUT_SERVICES; track service; let index = $index) {
+  <div
                 [ngClass]="{
                     'mb-[30px]': index !== ABOUT_SERVICES.length - 1
                 }"
-                *ngFor="let service of ABOUT_SERVICES; let index = index"
+               
                 class="w-full flex text-center flex-col items-center px-6 md:px-[25px] py-[34px] rounded-[rem] bg-brand-card-dark"
             >
                 <div class="w-full flex items-center">
@@ -52,9 +53,10 @@
                 <div
                     class="grid gap-y-4 md:grid-cols-2 text-white mt-[20px] w-full"
                 >
-                    <div
+                    @for (feature of service.features; track feature) {
+  <div
                         class="text-[13px] flex items-center justify-center md:justify-start"
-                        *ngFor="let feature of service.features"
+                       
                     >
                         <span
                             class="material-symbols-outlined text-accent-lighter mr-3"
@@ -64,8 +66,10 @@
 
                         {{ feature }}
                     </div>
+}
                 </div>
             </div>
+}
         </div>
     </div>
 </div>

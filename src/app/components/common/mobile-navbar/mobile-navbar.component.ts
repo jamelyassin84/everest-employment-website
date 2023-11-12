@@ -2,18 +2,17 @@ import {ChangeDetectionStrategy, Component, signal} from '@angular/core'
 import {CommonModule} from '@angular/common'
 import {NAVBAR_NAVIGATION} from 'app/_core/navigations/navbar-navigation'
 import {NavigationEnd, Router, RouterModule} from '@angular/router'
-import {filter, tap} from 'rxjs'
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop'
-import { MobileNavbarComponent } from '../mobile-navbar/mobile-navbar.component'
+import {filter, tap} from 'rxjs'
 
 @Component({
-    selector: 'navbar',
+    selector: 'mobile-navbar',
     standalone: true,
-    imports: [CommonModule, RouterModule, MobileNavbarComponent],
-    templateUrl: './navbar.component.html',
+    imports: [CommonModule, RouterModule],
+    templateUrl: './mobile-navbar.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavbarComponent {
+export class MobileNavbarComponent {
     constructor(private readonly _router: Router) {
         this._router.events
             .pipe(
@@ -31,6 +30,8 @@ export class NavbarComponent {
     }
 
     readonly NAVBAR_NAVIGATION = NAVBAR_NAVIGATION
+
+    showMobileNavigation = false
 
     currentNavigation = signal(undefined)
 }

@@ -16,14 +16,17 @@
     <div
         class="relative z-30 grid px-10 grid-cols-1 md:grid-cols-4 md:gap-[50px] mt-[50px] w-full max-w-screen-lg mx-auto rounded-[20px] border border-white/20 bg-brand-black items-center"
     >
-        <div
+        @for (award of AWARDS; track award; let index = $index) {
+  <div
             class="p-[16px] md:py-[70px] relative"
-            *ngFor="let award of AWARDS; let index = index"
+           
         >
-            <div
-                *ngIf="index !== 0 && index !== AWARDS.length - 1"
+            @if (index !== 0 && index !== AWARDS.length - 1) {
+<div
+               
                 class="right-0 rounded-full bg-white/20 w-[3px] h-[94px] absolute translate-x-7 translate-y-10"
             ></div>
+}
 
             <div
                 class="w-[59px] h-[59px] rounded-full bg-brand-dark-gray flex items-center mx-[3.5px] justify-center"
@@ -39,5 +42,6 @@
                 {{ award.description }}
             </div>
         </div>
+}
     </div>
 </div>

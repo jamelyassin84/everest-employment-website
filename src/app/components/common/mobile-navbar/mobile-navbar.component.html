@@ -1,0 +1,32 @@
+<div
+    class="w-screen py-3 flex items-center top-0 fixed z-[9999] bg-transparent backdrop-blur-lg"
+>
+    <img
+        alt=""
+        role="button"
+        routerLink="/"
+        src="../../../../assets/logo.png"
+        class="object-cover z-[11] mr-auto h-[50px]"
+    />
+
+    <button
+        (click)="showMobileNavigation = !showMobileNavigation"
+        class="ml-auto mr-2 rounded-full md:hover:bg-white/10 flex items-center justify-center p-1"
+    >
+        <span class="material-symbols-outlined text-white"> menu </span>
+    </button>
+</div>
+
+@if (showMobileNavigation) {
+<div class="flex w-full flex-col mt-[10vh]">
+    @for ( nav of NAVBAR_NAVIGATION; track $index) {
+    <li
+        [routerLink]="nav.link"
+        (click)="showMobileNavigation = false"
+        class="py-3 px-6 border-b border-b-white/10 text-white list-none"
+    >
+        {{ nav.name | titlecase }}
+    </li>
+    }
+</div>
+}

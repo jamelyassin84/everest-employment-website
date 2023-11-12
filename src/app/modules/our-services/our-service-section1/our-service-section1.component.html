@@ -18,9 +18,10 @@
     <div
         class="grid grid-cols-1 md:grid-cols-3 w-full max-w-screen-lg mx-auto gap-y-[40px] gap-x-[20px]"
     >
-        <div
+        @for (service of OUR_SERVICES; track service) {
+  <div
             class="w-full p-[42px] rounded-[20px] bg-brand-card-dark/50"
-            *ngFor="let service of OUR_SERVICES"
+           
         >
             <div class="flex items-center w-full">
                 <span
@@ -37,5 +38,6 @@
                 {{ service.description }}
             </div>
         </div>
+}
     </div>
 </div>

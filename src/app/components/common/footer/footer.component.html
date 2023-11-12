@@ -85,7 +85,8 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-1 gap-y-[14px] mt-[31px]">
-                <div *ngFor="let social of SOCIALS" class="flex items-center">
+                @for (social of SOCIALS; track social) {
+  <div class="flex items-center">
                     <div
                         role="button"
                         class="w-[50px] mr-[24px] flex-none h-[50px] mx-[3.5px] rounded-full border border-white/20 flex items-center justify-center md:hover:bg-white/10 active:opacity-80"
@@ -97,6 +98,7 @@
                         {{ social.name }}
                     </div>
                 </div>
+}
             </div>
         </div>
     </div>

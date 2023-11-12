@@ -17,14 +17,15 @@
     <ul
         class="grid md:grid-cols-3 mt-[100px] w-full mx-auto gap-[50px] md:gap-[159px] px-6 md:px-[80px]"
     >
-        <li
+        @for (partner of OUR_PARTNERS; track partner) {
+  <li
             role="button"
             (click)="currentPartner = partner"
             [ngClass]="{
       				'md:opacity-50': currentPartner !== partner,
       				'md:scale-125': currentPartner === partner,
       			}"
-            *ngFor="let partner of OUR_PARTNERS"
+           
             class="flex flex-col items-center justify-center text-center"
             style="transition: 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67)"
         >
@@ -55,10 +56,12 @@
                 {{ partner.about }}
             </div>
         </li>
+}
     </ul>
 
     <div class="flex mt-[120px] w-full mx-auto justify-center items-center">
-        <div
+        @for (partner of OUR_PARTNERS; track partner) {
+  <div
             role="button"
             (click)="currentPartner = partner"
             [ngClass]="{
@@ -66,7 +69,8 @@
                 'bg-white/20': currentPartner !== partner
             }"
             class="w-[40px] h-[3px] rounded-full mx-[7.5px]"
-            *ngFor="let partner of OUR_PARTNERS"
+           
         ></div>
+}
     </div>
 </div>
