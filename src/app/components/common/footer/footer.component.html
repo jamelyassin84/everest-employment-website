@@ -1,5 +1,5 @@
 <div
-    class="flex flex-col w-full px-6 md:py-[80px] md:px-[80px] relative pb-[150px]"
+    class="flex flex-col w-full px-6 md:py-[90px] md:px-[90px] relative pb-[150px]"
 >
     <div
         class="grid md:grid-cols-5 gap-y-8 gap-x-[90px] md:gap-[98px] mt-[50px] w-full max-w-screen-lg mx-auto items-start justify-start"
@@ -60,51 +60,64 @@
         </div>
 
         <div>
+            
             <div class="font-extrabold text-white text-[20px]">Contact Us</div>
             <div class="grid grid-cols-1 gap-y-[30px] mt-[25px]">
                 <div>
                     <div class="text-white/70">WhatsApp</div>
-                    <div class="text-white">+63-9241-234-5678</div>
+                    <div class="text-white">+48727479055</div>
                 </div>
 
-                <div>
-                    <div class="text-white/70">Email</div>
-                    <div class="text-white">{{ 'everest@gamil.com' }}</div>
+                <div class="text-white">
+                    <a href="mailto:recruitmentagencyeverest@gmail.com">{{ 'Contact Us On Email' }}:</a>
                 </div>
 
                 <div>
                     <div class="text-white/70">Address</div>
-                    <div class="text-white">Tondo Manila, Philippines</div>
+
+                    <a href="https://www.google.com/maps/place/Traktorowa+126,91-204+Łódź,+Polska" target="_blank" rel="noopener noreferrer" class="text-white">
+                        Traktorowa 126, 91-204 Łódź, Polska
+                    </a>
                 </div>
             </div>
         </div>
 
         <div class="col-span-2 md:col-span-1">
             <div class="font-extrabold text-white text-[20px]">
-                Follow us on :
+              Follow us on :
             </div>
-
+          
             <div class="grid grid-cols-2 md:grid-cols-1 gap-y-[14px] mt-[31px]">
-                @for (social of SOCIALS; track social) {
-  <div class="flex items-center">
-                    <div
-                        role="button"
-                        class="w-[50px] mr-[24px] flex-none h-[50px] mx-[3.5px] rounded-full border border-white/20 flex items-center justify-center md:hover:bg-white/10 active:opacity-80"
-                    >
-                        <img [src]="social.image" alt="" />
+              <div *ngFor="let social of SOCIALS" class="flex items-center">
+                <ng-container *ngIf="social.name === 'Facebook'; else otherSocial">
+                  <a href="https://www.facebook.com/profile.php?id=61551298993530" target="_blank" rel="noopener noreferrer" role="button" class="flex items-center">
+                    <div class="w-[50px] mr-[24px] flex-none h-[50px] mx-[3.5px] rounded-full border border-white/20 flex items-center justify-center md:hover:bg-white/10 active:opacity-80">
+                      <img [src]="social.image" alt="" />
                     </div>
-
-                    <div class="text-white text-[16px] ml-[12px]]">
-                        {{ social.name }}
+          
+                    <div class="text-white text-[16px] ml-[12px]">
+                      {{ social.name }}
                     </div>
-                </div>
-}
+                  </a>
+                </ng-container>
+          
+                <ng-template #otherSocial>
+                  <div class="w-[50px] mr-[24px] flex-none h-[50px] mx-[3.5px] rounded-full border border-white/20 flex items-center justify-center md:hover:bg-white/10 active:opacity-80">
+                    <img [src]="social.image" alt="" />
+                  </div>
+          
+                  <div class="text-white text-[16px] ml-[12px]">
+                    {{ social.name }}
+                  </div>
+                </ng-template>
+              </div>
             </div>
-        </div>
+          </div>
+          
     </div>
 
     <div
-        class="w-full min-h-[70px] border-t absolute bottom-0 border-white/10 text-center flex items-center"
+        class="w-full min-h-[20px] border-t absolute bottom-0 border-white/10 text-center flex items-center"
     >
         <div
             role="button"
@@ -121,7 +134,7 @@
         </div>
 
         <div
-            class="mx-auto text-white/50 text-[16px] md:-translate-x-[8vw] font-normal"
+            class="mx-auto text-white/50 text-[12px] md:-translate-x-[8vw] font-normal"
         >
             All rights reserved ©2023 for everest:
             <span class="text-accent-default">Developer</span> :
