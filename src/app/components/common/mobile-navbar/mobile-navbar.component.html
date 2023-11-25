@@ -18,7 +18,7 @@
 </div>
 
 @if (showMobileNavigation) {
-<div class="flex w-full flex-col mt-[10vh]">
+<div class="flex w-full fixed flex-col mt-[8vh] bg-black w-full z-20">
     @for ( nav of NAVBAR_NAVIGATION; track $index) {
     <li
         [routerLink]="nav.link"

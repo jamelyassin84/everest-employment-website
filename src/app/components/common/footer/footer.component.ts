@@ -6,7 +6,7 @@ import {SOCIALS} from 'app/_core/constants/socials'
     selector: 'app-footer',
     standalone: true,
     imports: [CommonModule, NgOptimizedImage],
-    templateUrl: './footer.component.html',
+    templateUrl: './footer.component.html', 
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {

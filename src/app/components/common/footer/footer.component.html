@@ -4,7 +4,7 @@
     <div
         class="grid md:grid-cols-5 gap-y-8 gap-x-[90px] md:gap-[98px] mt-[50px] w-full max-w-screen-lg mx-auto items-start justify-start"
     >
-        <div class="col-span-2">
+        <div class="col-span-2 flex flex-col items-center md:items-start md:col-span-2">
             <img
                 alt=""
                 role="button"
@@ -15,15 +15,15 @@
                 height="94"
             />
 
-            <div class="text-white/70 text-[16px] font-normal max-w-[405px]">
+            <div class="text-white/70 text-[16px] font-normal max-w-[405px] text-center md:text-left">
                 We are experts dedicated to transforming your recruitment
                 experience. With a keen understanding of your needs, we navigate
                 the talent landscape to bring you unparalleled expertise,
                 ensuring the perfect match for your company's success.
             </div>
         </div>
-
-        <div>
+       
+        <div class="col-span-2 md:col-span-1">
             <div class="font-extrabold text-white text-[20px]">Short Links</div>
 
             <div class="grid grid-cols-1 gap-y-[30px] md:pt-[25px]">
@@ -58,8 +58,8 @@
                 </div>
             </div>
         </div>
-
-        <div>
+       
+        <div class="col-span-2 md:col-span-1">
             
             <div class="font-extrabold text-white text-[20px]">Contact Us</div>
             <div class="grid grid-cols-1 gap-y-[30px] mt-[25px]">
@@ -81,13 +81,14 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="col-span-2 md:col-span-1">
             <div class="font-extrabold text-white text-[20px]">
               Follow us on :
             </div>
           
-            <div class="grid grid-cols-2 md:grid-cols-1 gap-y-[14px] mt-[31px]">
+            <div class="grid grid-cols-2 md:grid-cols-1 gap-y-[14px]
+             mt-[31px]">
               <div *ngFor="let social of SOCIALS" class="flex items-center">
                 <ng-container *ngIf="social.name === 'Facebook'; else otherSocial">
                   <a href="https://www.facebook.com/profile.php?id=61551298993530" target="_blank" rel="noopener noreferrer" role="button" class="flex items-center">
@@ -125,16 +126,16 @@
             class="flex items-center my-[20px] rounded-full"
         >
             <div
-                class="w-[50px] h-[50px] rounded-full border border-white/20 flex items-center mx-[3.5px] justify-center md:hover:bg-white/10 active:opacity-80"
+                class="w-[50px] h-[50px] rounded-full border border-white/20 flex items-center mx-[2px] justify-center md:hover:bg-white/10 active:opacity-80"
             >
                 <span class="material-symbols-outlined text-white">
                     arrow_upward
                 </span>
             </div>
         </div>
-
+        
         <div
-            class="mx-auto text-white/50 text-[12px] md:-translate-x-[8vw] font-normal"
+            class="mx-auto text-white/50 text-[10px] md:-translate-x-[6vw] font-normal"
         >
             All rights reserved ©2023 for everest:
             <span class="text-accent-default">Developer</span> :

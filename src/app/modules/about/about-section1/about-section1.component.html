@@ -21,16 +21,18 @@
             alt=""
         />
 
-        <div class="w-full">
+        <div class="w-full grid md:grid-cols-1">
             @for (service of ABOUT_SERVICES; track service; let index = $index) {
   <div
                 [ngClass]="{
-                    'mb-[30px]': index !== ABOUT_SERVICES.length - 1
+                    'mb-[30px]': index !== ABOUT_SERVICES.length - 1,
+                    'text-center': index !== ABOUT_SERVICES.length - 1,
+                    'text-left': index === ABOUT_SERVICES.length - 1
                 }"
                
                 class="w-full flex text-center flex-col items-center px-6 md:px-[25px] py-[34px] rounded-[rem] bg-brand-card-dark"
             >
-                <div class="w-full flex items-center">
+                <div class="w-full flex items-center flex-col">
                     <div class="flex-none mb-8 md:mt-0">
                         <img
                             alt=""
@@ -44,14 +46,14 @@
                             {{ service.title }}
                         </div>
 
-                        <div class="text-white/50 font-light text-[16px]">
+                        <div class="text-white/50 font-light text-[16px] md:items-center">
                             {{ service.description }}
                         </div>
                     </div>
                 </div>
 
                 <div
-                    class="grid gap-y-4 md:grid-cols-2 text-white mt-[20px] w-full"
+                    class="grid gap-y-4 md:grid-cols-2 text-white mt-[20px] w-full md:items-center"
                 >
                     @for (feature of service.features; track feature) {
   <div
